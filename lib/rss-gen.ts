@@ -5,7 +5,7 @@ import { ArticleData } from "./types";
 const outputRSS = async (posts: ArticleData[]): Promise<void> => {
     const feed = new RSS({
         title: "The Linux Zone",
-        description: "A blog about open source and Linux",
+        description: "A blog about all things Linux, open source and more",
         site_url: "https://thelinux.zone",
         feed_url: "https://thelinux.zone/rss.xml",
         language: "en",

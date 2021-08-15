@@ -13,7 +13,7 @@ const ArticleListing: React.FC<Props> = ({ articles }) => {
                 return (
                     <div className="">
                         <Link href={`/article/${arc.slug}`}>
-                            <h1 className="text-2xl cursor-pointer font-bold text-tide-400">
+                            <h1 className="text-2xl cursor-pointer font-bold text-white-400">
                                 {arc.title}
                             </h1>
                         </Link>
@@ -22,7 +22,7 @@ const ArticleListing: React.FC<Props> = ({ articles }) => {
                         {indx === articles.length - 1 ? (
                             <></>
                         ) : (
-                            <hr className="mt-10 mb-10 border-bunker-400" />
+                            <hr className="mt-10 mb-10 border-blue-400" />
                         )}
                     </div>
                 );

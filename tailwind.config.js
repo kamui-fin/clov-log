@@ -7,8 +7,7 @@ module.exports = {
     theme: {
         container: {},
         colors: {
-            // background
-            bunker: {
+            blue: {
                 DEFAULT: "#0F1419",
                 50: "#6987A5",
                 100: "#5C7A99",
@@ -21,20 +20,7 @@ module.exports = {
                 800: "#000000",
                 900: "#000000",
             },
-            anzac: {
-                DEFAULT: "#E6B450",
-                50: "#FFFFFF",
-                100: "#FFFFFF",
-                200: "#F9EDD6",
-                300: "#F3DAA9",
-                400: "#ECC77D",
-                500: "#E6B450",
-                600: "#E0A123",
-                700: "#B6821A",
-                800: "#896214",
-                900: "#5D420D",
-            },
-            tide: {
+            white: {
                 DEFAULT: "#B3B1AD",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -47,7 +33,7 @@ module.exports = {
                 800: "#676560",
                 900: "#4D4B47",
             },
-            trout: {
+            gray: {
                 DEFAULT: "#4D5566",
                 50: "#C5CAD3",
                 100: "#B7BCC8",
@@ -60,7 +46,7 @@ module.exports = {
                 800: "#0B0C0F",
                 900: "#000000",
             },
-            "picton-blue": {
+            sky: {
                 DEFAULT: "#39BAE6",
                 50: "#FFFFFF",
                 100: "#EEF9FD",
@@ -73,7 +59,7 @@ module.exports = {
                 800: "#0F5D77",
                 900: "#09394A",
             },
-            "texas-rose": {
+            amber: {
                 DEFAULT: "#FFB454",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -86,20 +72,7 @@ module.exports = {
                 800: "#BA6800",
                 900: "#874C00",
             },
-            malibu: {
-                DEFAULT: "#59C2FF",
-                50: "#FFFFFF",
-                100: "#FFFFFF",
-                200: "#F2FAFF",
-                300: "#BFE7FF",
-                400: "#8CD5FF",
-                500: "#59C2FF",
-                600: "#26AFFF",
-                700: "#0099F2",
-                800: "#0079BF",
-                900: "#00598C",
-            },
-            conifer: {
+            lime: {
                 DEFAULT: "#C2D94C",
                 50: "#FFFFFF",
                 100: "#FBFDF4",
@@ -112,7 +85,7 @@ module.exports = {
                 800: "#657319",
                 900: "#404910",
             },
-            riptide: {
+            teal: {
                 DEFAULT: "#95E6CB",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -125,7 +98,7 @@ module.exports = {
                 800: "#2BB788",
                 900: "#218E6A",
             },
-            froly: {
+            pink: {
                 DEFAULT: "#F07178",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -138,7 +111,7 @@ module.exports = {
                 800: "#B5131C",
                 900: "#870E15",
             },
-            "neon-carrot": {
+            orange: {
                 DEFAULT: "#FF8F40",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -164,20 +137,7 @@ module.exports = {
                 800: "#A36B1D",
                 900: "#784F15",
             },
-            "shuttle-gray": {
-                DEFAULT: "#626A73",
-                50: "#DBDDE0",
-                100: "#CDD0D4",
-                200: "#B1B7BD",
-                300: "#969DA5",
-                400: "#7A838E",
-                500: "#626A73",
-                600: "#4B5157",
-                700: "#33373C",
-                800: "#1C1E20",
-                900: "#040405",
-            },
-            picasso: {
+            yellow: {
                 DEFAULT: "#FFEE99",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -190,20 +150,7 @@ module.exports = {
                 800: "#FFD500",
                 900: "#CCAA00",
             },
-            "sandy-brown": {
-                DEFAULT: "#F29668",
-                50: "#FFFFFF",
-                100: "#FFFFFF",
-                200: "#FEF8F5",
-                300: "#FAD7C6",
-                400: "#F6B797",
-                500: "#F29668",
-                600: "#EE7539",
-                700: "#E15813",
-                800: "#B2450F",
-                900: "#83330B",
-            },
-            "red-orange": {
+            red: {
                 DEFAULT: "#FF3333",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -216,59 +163,7 @@ module.exports = {
                 800: "#990000",
                 900: "#660000",
             },
-            "bright-gray": {
-                DEFAULT: "#323945",
-                50: "#A1ABBB",
-                100: "#939EB0",
-                200: "#75839B",
-                300: "#5D6A80",
-                400: "#475163",
-                500: "#323945",
-                600: "#1D2127",
-                700: "#07080A",
-                800: "#000000",
-                900: "#000000",
-            },
-            "river-bed": {
-                DEFAULT: "#464D5E",
-                50: "#BCC1CD",
-                100: "#AEB4C2",
-                200: "#9099AD",
-                300: "#737E97",
-                400: "#5C657B",
-                500: "#464D5E",
-                600: "#303541",
-                700: "#1A1D24",
-                800: "#050506",
-                900: "#000000",
-            },
-            "pickled-bluewood": {
-                DEFAULT: "#273747",
-                50: "#91AAC3",
-                100: "#809DBA",
-                200: "#6084A7",
-                300: "#4B6A89",
-                400: "#395068",
-                500: "#273747",
-                600: "#151D26",
-                700: "#030405",
-                800: "#000000",
-                900: "#000000",
-            },
-            mirage: {
-                DEFAULT: "#1B2733",
-                50: "#7B9AB9",
-                100: "#6A8DB0",
-                200: "#507397",
-                300: "#3E5A76",
-                400: "#2D4154",
-                500: "#1B2733",
-                600: "#090D12",
-                700: "#000000",
-                800: "#000000",
-                900: "#000000",
-            },
-            "ebony-clay": {
+            blueGray: {
                 DEFAULT: "#242A35",
                 50: "#8D9AB2",
                 100: "#7E8CA7",
@@ -281,20 +176,7 @@ module.exports = {
                 800: "#000000",
                 900: "#000000",
             },
-            "chelsea-cucumber": {
-                DEFAULT: "#91B362",
-                50: "#FDFEFD",
-                100: "#F1F6EB",
-                200: "#D9E5C9",
-                300: "#C1D4A7",
-                400: "#A9C484",
-                500: "#91B362",
-                600: "#77984A",
-                700: "#5C7639",
-                800: "#415428",
-                900: "#273118",
-            },
-            "ship-cove": {
+            sky: {
                 DEFAULT: "#6994BF",
                 50: "#FFFFFF",
                 100: "#F8FAFC",
@@ -307,7 +189,7 @@ module.exports = {
                 800: "#2B4764",
                 900: "#1C2E40",
             },
-            japonica: {
+            rose: {
                 DEFAULT: "#D96C75",
                 50: "#FFFFFF",
                 100: "#FFFFFF",
@@ -326,9 +208,51 @@ module.exports = {
             sans: ["Roboto Mono", "monospace"],
             serif: ["Roboto Mono", "monospace"],
         },
+        extend: {
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        color: theme("colors.white"),
+                        h1: {
+                            color: theme("colors.white"),
+                        },
+                        h2: {
+                            color: theme("colors.white"),
+                        },
+                        h3: {
+                            color: theme("colors.white"),
+                        },
+                        h4: {
+                            color: theme("colors.white"),
+                        },
+                        strong: {
+                            color: theme("colors.white"),
+                        },
+                        blockquote: {
+                            color: theme("colors.white"),
+                        },
+                        code: {
+                            color: theme("colors.white"),
+                        },
+                        thead: {
+                            color: theme("colors.white"),
+                        },
+                        a: {
+                            color: theme("colors.white"),
+                        },
+                        "ol > li::before": {
+                            color: theme("colors.white"),
+                        },
+                        "ul > li::before": {
+                            backgroundColor: "#B3B1AD",
+                        },
+                    },
+                },
+            }),
+        },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };

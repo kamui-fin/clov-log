@@ -26,7 +26,7 @@ class MyDocument extends Document {
                     />
                 </Head>
                 <Head />
-                <body className="bg-bunker text-tide">
+                <body className="bg-blue text-white">
                     <Main />
                     <NextScript />
                 </body>
