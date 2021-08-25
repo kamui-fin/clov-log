@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { previewMd } from "../lib/utils";
 import { ArticleData } from "../lib/types";
+import ArticleCard from "./ArticleCard";
 
 interface Props {
     articles: ArticleData[];
@@ -8,26 +7,20 @@ interface Props {
 
 const ArticleListing: React.FC<Props> = ({ articles }) => {
     return (
-        <div className="">
+        <ol>
             {articles.map((arc: ArticleData, indx) => {
+                let divider = <></>;
+                if (articles.length !== 1 && indx !== articles.length - 1) {
+                    divider = <hr className="mt-10 mb-10 border-blue-400" />;
+                }
                 return (
-                    <div className="">
-                        <Link href={`/article/${arc.slug}`}>
-                            <h1 className="text-2xl cursor-pointer font-bold text-white-400">
-                                {arc.title}
-                            </h1>
-                        </Link>
-                        <h2 className="pt-1">{arc.date.toString()}</h2>
-                        <p className="pt-4 text-sm">{previewMd(arc.desc)}</p>
-                        {indx === articles.length - 1 ? (
-                            <></>
-                        ) : (
-                            <hr className="mt-10 mb-10 border-blue-400" />
-                        )}
-                    </div>
+                    <li>
+                        <ArticleCard article={arc} key={arc.slug} />
+                        {divider}
+                    </li>
                 );
             })}
-        </div>
+        </ol>
     );
 };
 

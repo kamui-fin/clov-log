@@ -18,12 +18,9 @@ const Nav: React.FC = () => {
                         </Link>
                     </li>
                 </div>
-                <div className="flex flex-row justify-between w-56">
+                <div className="flex flex-row justify-between gap-8">
                     <li>
-                        <Link href="/archives">Archives</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact">Contact</Link>
+                        <Link href="/archive">Archive</Link>
                     </li>
                     <li>
                         <Link href="/rss.xml">RSS </Link>

@@ -2,12 +2,15 @@ import RSS from "rss";
 import fs from "fs";
 import { ArticleData } from "./types";
 
+// this may change
+const DOMAIN = "https://linuxzone.xyz";
+
 const outputRSS = async (posts: ArticleData[]): Promise<void> => {
     const feed = new RSS({
-        title: "The Linux Zone",
+        title: "Linux Zone",
         description: "A blog about all things Linux, open source and more",
-        site_url: "https://thelinux.zone",
-        feed_url: "https://thelinux.zone/rss.xml",
+        site_url: DOMAIN,
+        feed_url: `${DOMAIN}/rss.xml`,
         language: "en",
     });
 
@@ -15,7 +18,7 @@ const outputRSS = async (posts: ArticleData[]): Promise<void> => {
         feed.item({
             title: post.title,
             description: post.desc,
-            url: `https://thelinux.zone/article/${post.slug}`,
+            url: `${DOMAIN}/article/${post.slug}`,
             categories: [],
             author: post.author,
             date: post.date,

@@ -16,14 +16,15 @@ export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { content, data } = matter(fileContents);
     const mdxSource = await serialize(content, { scope: data });
+    const { title, desc, date, author } = data;
 
     return {
         slug,
         mdxSource,
-        title: data.title,
-        desc: data.desc,
-        date: data.date,
-        author: data.author,
+        title,
+        desc,
+        date,
+        author,
     };
 };
 

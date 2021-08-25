@@ -11,11 +11,7 @@ const Home: React.FC<Props> = ({ allArticles }: Props) => {
     return <ArticleListing articles={allArticles} />;
 };
 
-interface StaticProps {
-    props: Props;
-}
-
-export const getStaticProps = async (): Promise<StaticProps> => {
+export const getStaticProps = async (): Promise<{ props: Props }> => {
     const allArticles = await getAllArticles();
     outputRSS(allArticles);
 
