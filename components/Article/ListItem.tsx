@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { previewMd } from "../lib/utils";
-import { ArticleData } from "../lib/types";
+import { previewMd } from "../../lib/utils";
+import { ArticleData } from "../../lib/types";
 
 interface Props {
     article: ArticleData;
 }
 
-const ArticleCard: React.FC<Props> = (props: Props) => {
+const ArticleListItem: React.FC<Props> = (props: Props) => {
     const { article } = props;
     return (
         <div>
@@ -21,4 +21,4 @@ const ArticleCard: React.FC<Props> = (props: Props) => {
     );
 };
 
-export default ArticleCard;
+export default ArticleListItem;

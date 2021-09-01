@@ -7,7 +7,10 @@ import { ArticleData } from "./types";
 const dataDir = path.join(process.cwd(), "data");
 
 export const getArticles = (): string[] => {
-    return fs.readdirSync(dataDir);
+    return fs
+        .readdirSync(dataDir, { withFileTypes: true })
+        .filter((dn) => dn.isFile())
+        .map((dn) => dn.name);
 };
 
 export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
@@ -16,7 +19,7 @@ export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { content, data } = matter(fileContents);
     const mdxSource = await serialize(content, { scope: data });
-    const { title, desc, date, author } = data;
+    const { title, desc, date, author, tags } = data;
 
     return {
         slug,
@@ -25,6 +28,7 @@ export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
         desc,
         date,
         author,
+        tags,
     };
 };
 
@@ -40,3 +44,6 @@ export const getAllArticles = async (): Promise<ArticleData[]> => {
         new Date(a1.date) > new Date(a2.date) ? -1 : 1
     );
 };
+
+export const getUniqueTags = (articles: ArticleData[]): string[] =>
+    Array.from(new Set(articles.map(({ tags }) => tags).flat(1)));

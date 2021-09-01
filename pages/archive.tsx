@@ -1,4 +1,5 @@
 import Timeline from "../components/Timeline";
+import Layout from "../components/Layout";
 import { getAllArticles } from "../lib/api";
 import { ArticleData } from "../lib/types";
 
@@ -29,7 +30,11 @@ const sortAndGroup = (articles: ArticleData[]): Map<number, ArticleData[]> => {
 const Archive: React.FC<Props> = (props: Props) => {
     const { allArticles } = props;
     const sorted = sortAndGroup(allArticles);
-    return <Timeline articles={sorted} />;
+    return (
+        <Layout>
+            <Timeline articles={sorted} />
+        </Layout>
+    );
 };
 
 export const getStaticProps = async (): Promise<{ props: Props }> => {

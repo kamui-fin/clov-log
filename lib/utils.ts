@@ -3,3 +3,7 @@ export const previewMd = (markdown: string): string => {
         ? markdown
         : `${markdown.slice(0, 300).trim()}...`;
 };
+
+export const slugify = (input: string): string => {
+    return input.toLowerCase().replace(/[ \/]/, "-");
+};

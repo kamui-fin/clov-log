@@ -1,5 +1,5 @@
-import { ArticleData } from "../lib/types";
-import ArticleCard from "./ArticleCard";
+import { ArticleData } from "../../lib/types";
+import ArticleListItem from "./ListItem";
 
 interface Props {
     articles: ArticleData[];
@@ -8,6 +8,7 @@ interface Props {
 const ArticleListing: React.FC<Props> = ({ articles }) => {
     return (
         <ol>
+            <hr className="mt-10 mb-10 border-blue-400" />
             {articles.map((arc: ArticleData, indx) => {
                 let divider = <></>;
                 if (articles.length !== 1 && indx !== articles.length - 1) {
@@ -15,7 +16,7 @@ const ArticleListing: React.FC<Props> = ({ articles }) => {
                 }
                 return (
                     <li>
-                        <ArticleCard article={arc} key={arc.slug} />
+                        <ArticleListItem article={arc} key={arc.slug} />
                         {divider}
                     </li>
                 );

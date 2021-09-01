@@ -1,0 +1,25 @@
+~/dev/projects/linux-zone/..
+  components
+     ArticleCard.tsx
+     ArticleListing.tsx
+     Footer.tsx
+     Nav.tsx
+     Tags.tsx
+     Timeline.tsx
+  lib
+  pages
+  public
+  style
+   .eslintrc.js
+   .gitattributes
+   .gitignore
+  .prettierrc
+   LICENSE
+   next-env.d.ts
+   package.json
+   postcss.config.js
+  README.md
+   tailwind.config.js
+  todo
+   tsconfig.json
+  yarn.lock

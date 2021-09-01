@@ -1,4 +1,4 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote/dist/types";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 export interface ArticleData {
     slug: string;
@@ -7,4 +7,5 @@ export interface ArticleData {
     desc: string;
     date: Date;
     author: string;
+    tags: string[];
 }

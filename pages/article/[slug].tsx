@@ -1,34 +1,38 @@
-import Highlight from 'react-highlight'
+import Highlight from "react-highlight";
 import { GetStaticPaths } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { getAllArticles, getArticleBySlug } from "../../lib/api";
 import { ArticleData } from "../../lib/types";
+import Layout from "../../components/Layout";
 
 interface PreProps {
     children: React.ReactElement;
 }
 
-const Pre = (props: PreProps) => {
+const Pre = ({ children }: PreProps) => {
     return (
-        <Highlight className={props.children.props.className || "language-plaintext"}>
-            {props.children}
+        <Highlight className={children.props.className || "language-plaintext"}>
+            {children}
         </Highlight>
-    )
-}
+    );
+};
 
 const components = {
-   pre: Pre 
-}
+    pre: Pre,
+};
 
 const Article: React.FC<ArticleData> = (article) => {
+    const { title, date, mdxSource } = article;
     return (
-        <>
-            <h1 className="text-4xl font-bold text-white-400">{article.title}</h1>
-            <h2 className="my-4">{article.date.toString()}</h2>
-            <article className="pt-2 prose lg:prose-xl">
-                <MDXRemote {...article.mdxSource} components={components}/>
-            </article>
-        </>
+        <Layout>
+            <section className="px-5 mb-4">
+                <h1 className="text-4xl font-bold text-white-400">{title}</h1>
+                <h2 className="my-4">{date.toString()}</h2>
+                <article className="pt-2 prose lg:prose-xl max-w-full">
+                    <MDXRemote {...mdxSource} components={components} />
+                </article>
+            </section>
+        </Layout>
     );
 };
 

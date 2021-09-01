@@ -1,21 +1,9 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
-import Container from "../components/Container";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import "../style/ayu-highlight.css";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
-    return (
-        <>
-            <Nav />
-            <Container>
-                <Component {...pageProps} />
-                <Footer />
-            </Container>
-        </>
-    );
+const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+    return <Component {...pageProps} />;
 };
 
-export default MyApp;
+export default App;
