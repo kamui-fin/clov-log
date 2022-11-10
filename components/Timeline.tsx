@@ -10,10 +10,10 @@ const Timeline: React.FC<Props> = (props: Props) => {
     const keys = Array.from(articles.keys());
 
     return (
-        <div className="px-4">
+        <div className="px-4 m-2">
             {keys.map((year) => {
                 return (
-                    <div className="mb-10">
+                    <div className="mb-10 text-center">
                         <h1 className="pb-4 text-5xl">{year}</h1>
                         <ol>
                             {articles.get(year)?.map((article) => (

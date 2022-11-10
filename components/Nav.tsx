@@ -10,12 +10,12 @@ const Nav: React.FC = () => {
     };
 
     return (
-        <nav>
+        <nav className="shrink-0">
             <ul className="flex flex-wrap sm:flex-nowrap justify-between py-5 px-6 max-w-7xl m-auto">
                 <Link href="/">
                     <div className="cursor-pointer flex flex-shrink-0 flex-row items-start gap-3">
                         <Image src="/logo.svg" height={25} width={25} />
-                        <h2 className="font-bold">Linux Zone</h2>
+                        <h2 className="font-bold">Blog</h2>
                     </div>
                 </Link>
                 <button
@@ -37,9 +37,6 @@ const Nav: React.FC = () => {
                     </li>
                     <li>
                         <Link href="/archive">Archive</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact">Contact</Link>
                     </li>
                     <li>
                         <Link href="/rss.xml">RSS </Link>

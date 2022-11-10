@@ -14,8 +14,7 @@ const Home: React.FC<Props> = ({ allArticles }: Props) => {
             <div className="px-4 mb-6">
                 <h1 className="text-6xl font-bold text-white-300">Blog</h1>
                 <h3 className="my-5 text-white-400 text-xl max-w-3xl leading-7">
-                    Keep up to date with our latest articles about FLOSS, Linux,
-                    programming, and more!
+                    Keep up to date with our latest articles!
                 </h3>
                 <ArticleListing articles={allArticles} />
             </div>

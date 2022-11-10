@@ -3,12 +3,12 @@ import fs from "fs";
 import { ArticleData } from "./types";
 
 // this may change
-const DOMAIN = "https://linuxzone.xyz";
+const DOMAIN = "https://blogsite.xyz";
 
 const outputRSS = async (posts: ArticleData[]): Promise<void> => {
     const feed = new RSS({
-        title: "Linux Zone",
-        description: "A blog about all things Linux, open source and more",
+        title: "Blog title",
+        description: "Blog description",
         site_url: DOMAIN,
         feed_url: `${DOMAIN}/rss.xml`,
         language: "en",
