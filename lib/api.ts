@@ -2,20 +2,36 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { ArticleData } from "./types";
+import { MinimalArticleData, ArticleData } from "./types";
 
 const dataDir = path.join(process.cwd(), "data");
+const blogDir = path.join(dataDir, "blog");
 
 export const getArticles = (): string[] => {
     return fs
-        .readdirSync(dataDir, { withFileTypes: true })
+        .readdirSync(blogDir, { withFileTypes: true })
         .filter((dn) => dn.isFile())
         .map((dn) => dn.name);
 };
 
-export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
+export const getArticleBySlugWithoutMatter = async (
+    slg: string
+): Promise<MinimalArticleData> => {
     const slug = slg.replace(/\.mdx$/, "");
     const fullPath = path.join(dataDir, `${slug}.mdx`);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { content, data } = matter(fileContents);
+    const mdxSource = await serialize(content, { scope: data });
+
+    return {
+        slug,
+        mdxSource,
+    };
+};
+
+export const getArticleBySlug = async (slg: string): Promise<ArticleData> => {
+    const slug = slg.replace(/\.mdx$/, "");
+    const fullPath = path.join(blogDir, `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { content, data } = matter(fileContents);
     const mdxSource = await serialize(content, { scope: data });

@@ -33,6 +33,9 @@ const Nav: React.FC = () => {
                     } sm:flex flex w-full flex-col mt-10 sm:flex-row sm:m-0 justify-end gap-8`}
                 >
                     <li>
+                        <Link href="/roadmap">Roadmap</Link>
+                    </li>
+                    <li>
                         <Link href="/browse">Browse</Link>
                     </li>
                     <li>
