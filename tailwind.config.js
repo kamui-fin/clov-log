@@ -192,8 +192,8 @@ module.exports = {
         },
         fontFamily: {
             monospace: ["Roboto Mono", "monospace"],
-            sans: ["Roboto Mono", "monospace"],
-            serif: ["Roboto Mono", "monospace"],
+            sans: ["Inter", "sans-serif"],
+            serif: ["Inter", "sans-serif"],
         },
         extend: {
             typography: (theme) => ({

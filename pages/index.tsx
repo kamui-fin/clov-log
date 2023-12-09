@@ -12,9 +12,9 @@ const Home: React.FC<Props> = ({ allArticles }: Props) => {
     return (
         <Layout>
             <div className="px-4 mb-6">
-                <h1 className="text-6xl font-bold text-white-300">Blog</h1>
+                <h1 className="text-6xl font-bold text-white-300">Log</h1>
                 <h3 className="my-5 text-white-400 text-xl max-w-3xl leading-7">
-                    Keep up to date with our latest articles!
+                    Follow our progress throughout our Machine Learning journey.
                 </h3>
                 <ArticleListing articles={allArticles} />
             </div>

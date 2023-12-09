@@ -11,7 +11,7 @@ const Layout: React.FC<Props> = ({ children }) => {
             <main className="flex-[1_0_auto] sm:px-3 md:px-4 max-w-5xl m-auto mt-10">
                 {children}
             </main>
-            <footer className="h-12 p-6 text-center mt-14 shrink-0">
+            <footer className="p-6 text-center mt-14 shrink-0 mb-10 h-18">
                 Copyright &copy; 2022 Blog. All rights reserved
             </footer>
         </div>

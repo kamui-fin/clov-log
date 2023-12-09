@@ -15,7 +15,7 @@ const Nav: React.FC = () => {
                 <Link href="/">
                     <div className="cursor-pointer flex flex-shrink-0 flex-row items-start gap-3">
                         <Image src="/logo.svg" height={25} width={25} />
-                        <h2 className="font-bold">Blog</h2>
+                        <h2 className="font-bold">CLOV</h2>
                     </div>
                 </Link>
                 <button

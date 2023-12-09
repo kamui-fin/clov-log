@@ -13,14 +13,23 @@ const getDate = (article: ArticleData) => {
     return date;
 };
 
+const formatDate = (date: Date) => {
+    const options = { year: "numeric", month: "long" };
+    const dateFormatter = new Intl.DateTimeFormat("en-US", options);
+
+    const formattedDate = dateFormatter.format(date);
+    return formattedDate;
+};
+
 const sortAndGroup = (articles: ArticleData[]): Map<number, ArticleData[]> => {
     const sorted = articles.sort((a, b) => {
         return getDate(b) - getDate(a);
     });
     const grouped = sorted.reduce((entryMap, article) => {
+        console.log(entryMap);
         const date = getDate(article);
-        return entryMap.set(date.getFullYear(), [
-            ...(entryMap.get(getDate(article).getFullYear()) || []),
+        return entryMap.set(formatDate(date), [
+            ...entryMap.get(formatDate(date)) || [],
             article,
         ]);
     }, new Map());
