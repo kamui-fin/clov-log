@@ -42,6 +42,9 @@ const Nav: React.FC = () => {
                         <Link href="/archive">Archive</Link>
                     </li>
                     <li>
+                        <Link href="/about">About</Link>
+                    </li>
+                    <li>
                         <Link href="/rss.xml">RSS </Link>
                     </li>
                 </div>
