@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 export const previewMd = (markdown: string): string => {
     return markdown.length <= 300
         ? markdown
@@ -6,4 +8,14 @@ export const previewMd = (markdown: string): string => {
 
 export const slugify = (input: string): string => {
     return input.toLowerCase().replace(/[ \/]/, "-");
+};
+
+export const formatArticleDateFromJs = (date: Date): string => {
+    const dt = DateTime.fromJSDate(date);
+    return dt.toLocaleString(DateTime.DATE_FULL);
+};
+
+export const formatArticleDate = (date: string): string => {
+    const dt = DateTime.fromFormat(date, "L-dd-y");
+    return dt.toLocaleString(DateTime.DATE_FULL);
 };

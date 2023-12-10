@@ -14,3 +14,8 @@ export interface ArticleData {
     author: string;
     tags: string[];
 }
+
+export interface AllArticles {
+    Sai: ArticleData[];
+    Abhay: ArticleData[];
+}

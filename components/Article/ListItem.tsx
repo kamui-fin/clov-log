@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { previewMd } from "../../lib/utils";
+import { formatArticleDate, previewMd } from "../../lib/utils";
 import { ArticleData } from "../../lib/types";
 
 interface Props {
@@ -10,12 +10,16 @@ const ArticleListItem: React.FC<Props> = (props: Props) => {
     const { article } = props;
     return (
         <div>
-            <Link href={`/article/${article.slug}`}>
+            <Link
+                href={`/article/${article.author.toLowerCase()}/${
+                    article.slug
+                }`}
+            >
                 <h1 className="text-2xl cursor-pointer font-bold text-white-400">
                     {article.title}
                 </h1>
             </Link>
-            <h2 className="pt-1">{article.date.toString()}</h2>
+            <h2 className="pt-1">{formatArticleDate(article.date)}</h2>
             <p className="pt-4 text-sm">{previewMd(article.desc)}</p>
         </div>
     );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 const Nav: React.FC = () => {
     const [isHidden, setHidden] = useState(true);
@@ -46,6 +47,11 @@ const Nav: React.FC = () => {
                     </li>
                     <li>
                         <Link href="/rss.xml">RSS </Link>
+                    </li>
+                    <li className="flex justify-center items-center">
+                        <a href="https://github.com/kamui-fin/clov-blog">
+                            <FaGithub />
+                        </a>
                     </li>
                 </div>
             </ul>

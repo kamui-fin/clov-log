@@ -85,7 +85,7 @@ const Browse: React.FC<Props> = (props: Props) => {
 };
 
 export const getStaticProps = async (): Promise<{ props: Props }> => {
-    const articles = await getAllArticles();
+    const articles = Object.values(await getAllArticles()).flat();
     const tags = getUniqueTags(articles);
     outputRSS(articles);
 

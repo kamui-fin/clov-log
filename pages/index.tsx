@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import ArticleListing from "../components/Article/Listing";
 import Layout from "../components/Layout";
-import { getAllArticles, getUniqueTags } from "../lib/api";
+import { getAllArticles } from "../lib/api";
 import outputRSS from "../lib/rss-gen";
 import { ArticleData } from "../lib/types";
 
@@ -45,10 +45,10 @@ const Home: React.FC<Props> = ({ allArticles }: Props) => {
 
 export const getStaticProps = async (): Promise<{ props: Props }> => {
     const allArticles = await getAllArticles();
-    outputRSS(allArticles);
+    outputRSS(Object.values(allArticles).flat());
 
     return {
-        props: { allArticles },
+        props: { allArticles: allArticles.Abhay }, // default with someone
     };
 };
 

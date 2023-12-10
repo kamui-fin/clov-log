@@ -10,12 +10,15 @@
         "lint": "eslint . --ext .ts,.tsx"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.17",
         "@tailwindcss/typography": "^0.4.1",
+        "@types/luxon": "^3.3.7",
         "@types/react-highlight": "^0.12.3",
         "@types/rss": "^0.0.29",
         "autoprefixer": "^10.3.3",
         "gray-matter": "^4.0.3",
         "highlight.js": "^11.2.0",
+        "luxon": "^3.4.4",
         "next": "11.1.0",
         "next-mdx-remote": "^3.0.4",
         "postcss": "^8.3.6",

@@ -26,10 +26,9 @@ const sortAndGroup = (articles: ArticleData[]): Map<number, ArticleData[]> => {
         return getDate(b) - getDate(a);
     });
     const grouped = sorted.reduce((entryMap, article) => {
-        console.log(entryMap);
         const date = getDate(article);
         return entryMap.set(formatDate(date), [
-            ...entryMap.get(formatDate(date)) || [],
+            ...(entryMap.get(formatDate(date)) || []),
             article,
         ]);
     }, new Map());
@@ -50,7 +49,7 @@ export const getStaticProps = async (): Promise<{ props: Props }> => {
     const allArticles = await getAllArticles();
 
     return {
-        props: { allArticles },
+        props: { allArticles: allArticles.Abhay }, // default someone for now
     };
 };
 
