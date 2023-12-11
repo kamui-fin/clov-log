@@ -2,8 +2,7 @@ import RSS from "rss";
 import fs from "fs";
 import { ArticleData } from "./types";
 
-// this may change
-const DOMAIN = "https://blogsite.xyz";
+const DOMAIN = "https://clovlog.com";
 
 const outputRSS = async (posts: ArticleData[]): Promise<void> => {
     const feed = new RSS({

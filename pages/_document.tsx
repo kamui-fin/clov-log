@@ -6,6 +6,7 @@ import Document, {
     DocumentContext,
     DocumentInitialProps,
 } from "next/document";
+import { NextSeo } from "next-seo";
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -42,8 +43,8 @@ class MyDocument extends Document {
                         href="/safari-pinned-tab.svg"
                         color="#5bbad5"
                     />
-                    <meta name="msapplication-TileColor" content="#2b5797" />
-                    <meta name="theme-color" content="#ffffff" />
+                    <meta name="msapplication-TileColor" content="#f27983" />
+                    <meta name="theme-color" content="#f27983" />
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"
@@ -55,6 +56,18 @@ class MyDocument extends Document {
                     <link
                         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
                         rel="stylesheet"
+                    />
+                    <NextSeo
+                        title="Clov Log"
+                        description="Follow our progress throughout our Machine Learning journey."
+                        canonical="https://clovlog.com"
+                        openGraph={{
+                            url: "https://clovlog.com",
+                            title: "Clov Log",
+                            description:
+                                "Follow our progress throughout our Machine Learning journey.",
+                            siteName: "Clov Log",
+                        }}
                     />
                 </Head>
                 <body className="bg-blue text-white relative">
