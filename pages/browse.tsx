@@ -14,24 +14,18 @@ interface Props {
 const Browse: React.FC<Props> = (props: Props) => {
     const [currentTags, setCurrentTags] = useState<string[]>([]);
     const [query, setQuery] = useState<string>("");
-    const [articles, setArticles] = useState<ArticleData[]>(props.articles);
+    const { articles, tags } = props;
+    const [entries, setEntries] = useState<ArticleData[]>(articles);
 
-    const filterArticlesByTags = (tags: string[]) => {
-        setArticles(
-            articles.filter((a) => {
-                for (const tag of a.tags) {
-                    if (tags.includes(tag)) {
-                        return true;
-                    }
-                }
-                return false;
-            })
+    const filterArticlesByTags = (newTags: string[]) => {
+        setEntries(
+            entries.filter((a) => a.tags.some((tag) => newTags.includes(tag)))
         );
     };
 
     const filterArticlesBySearch = (searchQuery: string) => {
-        setArticles(
-            articles.filter((a) => {
+        setEntries(
+            entries.filter((a) => {
                 return (a.title + a.desc)
                     .toLowerCase()
                     .includes(searchQuery.toLowerCase());
@@ -42,10 +36,10 @@ const Browse: React.FC<Props> = (props: Props) => {
     const handleInputChange: React.ReactEventHandler<HTMLInputElement> = (
         event
     ) => {
-        const val: string = event.target.value;
+        const val: string = (event.target as HTMLInputElement).value;
         setQuery(val);
         if (!val.length) {
-            setArticles(props.articles);
+            setEntries(props.articles);
         } else {
             filterArticlesBySearch(val);
         }
@@ -54,7 +48,7 @@ const Browse: React.FC<Props> = (props: Props) => {
     const handleToggleTags = (newTags: string[]) => {
         setCurrentTags(newTags);
         if (!newTags.length) {
-            setArticles(props.articles);
+            setEntries(props.articles);
         } else {
             filterArticlesByTags(newTags);
         }
@@ -74,11 +68,11 @@ const Browse: React.FC<Props> = (props: Props) => {
                     onChange={handleInputChange}
                 />
                 <Tags
-                    tags={props.tags}
+                    tags={tags}
                     selectedTags={currentTags}
                     setTags={handleToggleTags}
                 />
-                <ArticleGrid articles={articles} />
+                <ArticleGrid articles={entries} />
             </div>
         </Layout>
     );

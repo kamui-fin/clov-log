@@ -5,8 +5,11 @@ interface Props {
 }
 
 const Tags: React.FC<Props> = ({ tags, selectedTags, setTags }: Props) => {
-    const toggleTag: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-        const tagName = event.target.textContent;
+    const toggleTag: React.MouseEventHandler<HTMLButtonElement> = (
+        event: React.MouseEvent<HTMLButtonElement>
+    ) => {
+        const tagName = (event.target as HTMLButtonElement).textContent;
+        if (!tagName) return;
         if (selectedTags.find((t) => t === tagName)) {
             setTags(selectedTags.filter((t) => t !== tagName));
         } else {
