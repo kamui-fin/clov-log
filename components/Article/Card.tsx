@@ -10,7 +10,11 @@ const ArticleCard: React.FC<Props> = (props: Props) => {
     const { article } = props;
     return (
         <div className="shadow-lg rounded p-3">
-            <Link href={`/article/${article.slug}`}>
+            <Link
+                href={`/article/${article.author.toLowerCase()}/${
+                    article.slug
+                }`}
+            >
                 <h1 className="text-2xl cursor-pointer font-bold text-white-300">
                     {article.title}
                 </h1>

@@ -18,7 +18,11 @@ const Timeline: React.FC<Props> = (props: Props) => {
                         <ol>
                             {articles.get(date)?.map((article) => (
                                 <li className="mb-1">
-                                    <Link href={`/article/${article.slug}`}>
+                                    <Link
+                                        href={`/article/${article.author.toLowerCase()}/${
+                                            article.slug
+                                        }`}
+                                    >
                                         {article.title}
                                     </Link>
                                 </li>

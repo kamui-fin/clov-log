@@ -15,7 +15,12 @@ const Nav: React.FC = () => {
             <ul className="flex flex-wrap sm:flex-nowrap justify-between py-5 px-6 max-w-7xl m-auto">
                 <Link href="/">
                     <div className="cursor-pointer flex flex-shrink-0 flex-row items-start gap-3">
-                        <Image src="/logo.svg" height={25} width={25} />
+                        <img
+                            src="/logo.svg"
+                            height={25}
+                            width={25}
+                            alt="CLOV Logo"
+                        />
                         <h2 className="font-bold">CLOV</h2>
                     </div>
                 </Link>
@@ -48,7 +53,7 @@ const Nav: React.FC = () => {
                     <li>
                         <Link href="/rss.xml">RSS </Link>
                     </li>
-                    <li className="flex justify-center items-center">
+                    <li className="flex ml-1 md:justify-center sm:items-center">
                         <a href="https://github.com/kamui-fin/clov-blog">
                             <FaGithub />
                         </a>

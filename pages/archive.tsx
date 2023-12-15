@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { NextSeo } from "next-seo";
 import Timeline from "../components/Timeline";
 import Layout from "../components/Layout";
 import { getAllArticles } from "../lib/api";
@@ -49,6 +50,12 @@ const Archive: React.FC<Props> = (props: Props) => {
     const sorted = sortAndGroup(allArticles);
     return (
         <Layout>
+            <NextSeo
+                title="CLOV Log | Archive"
+                description="An organized archive of our progress to-date"
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <Timeline articles={sorted} />
         </Layout>
     );

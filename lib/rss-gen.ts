@@ -17,7 +17,7 @@ const outputRSS = async (posts: ArticleData[]): Promise<void> => {
         feed.item({
             title: post.title,
             description: post.desc,
-            url: `${DOMAIN}/article/${post.slug}`,
+            url: `${DOMAIN}/article/${post.author.toLowerCase()}/${post.slug}`,
             categories: [],
             author: post.author,
             date: post.date,

@@ -5,6 +5,7 @@ import { GetStaticPaths } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { getAllArticles, getArticleBySlug } from "../../../lib/api";
 import { ArticleData } from "../../../lib/types";
 import Layout from "../../../components/Layout";
@@ -31,12 +32,18 @@ function classNames(...classes: string[]) {
 }
 
 const Article: React.FC<ArticleData> = (article) => {
-    const { title, date, mdxSource, author, slug } = article;
+    const { title, desc, date, mdxSource, author, slug } = article;
     return (
         <Layout>
+            <NextSeo
+                title={title}
+                description={desc}
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <section className="px-5 mb-4">
                 <h1 className="text-4xl font-bold text-white-400">{title}</h1>
-                <div className="flex justify-between">
+                <div className="flex flex-wrap mb-4 justify-between">
                     <h2 className="my-4">{formatArticleDate(date)}</h2>
                     <Tab.Group
                         selectedIndex={author.toLowerCase() === "abhay" ? 0 : 1}

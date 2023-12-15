@@ -6,7 +6,6 @@ import Document, {
     DocumentContext,
     DocumentInitialProps,
 } from "next/document";
-import { NextSeo } from "next-seo";
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -56,18 +55,6 @@ class MyDocument extends Document {
                     <link
                         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
                         rel="stylesheet"
-                    />
-                    <NextSeo
-                        title="Clov Log"
-                        description="Follow our progress throughout our Machine Learning journey."
-                        canonical="https://clovlog.com"
-                        openGraph={{
-                            url: "https://clovlog.com",
-                            title: "Clov Log",
-                            description:
-                                "Follow our progress throughout our Machine Learning journey.",
-                            siteName: "Clov Log",
-                        }}
                     />
                 </Head>
                 <body className="bg-blue text-white relative">
