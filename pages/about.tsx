@@ -1,5 +1,6 @@
 import Highlight from "react-highlight";
 import { MDXRemote } from "next-mdx-remote";
+import { NextSeo } from "next-seo";
 import { ArticleData, MinimalArticleData } from "../lib/types";
 import Layout from "../components/Layout";
 import { getArticleBySlugWithoutMatter } from "../lib/api";
@@ -24,6 +25,12 @@ const AboutUs: React.FC<ArticleData> = (article) => {
     const { mdxSource } = article;
     return (
         <Layout>
+            <NextSeo
+                title="CLOV Log | About Us"
+                description="This blog tracks our journey through the world of Machine Learning en route to extensively understanding what Artificial Intelligence actually is."
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <section className="px-5 mb-4">
                 <h1 className="text-5xl text-center pb-5 font-bold text-white">
                     About Us

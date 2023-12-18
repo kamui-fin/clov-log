@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+import { NextSeo } from "next-seo";
 import Timeline from "../components/Timeline";
 import Layout from "../components/Layout";
 import { getAllArticles } from "../lib/api";
@@ -7,23 +9,31 @@ interface Props {
     allArticles: ArticleData[];
 }
 
-const getDate = (article: ArticleData) => {
+const getDate = (article: ArticleData): Date => {
     const nums = article.date.match(/\d+/g);
-    const date = new Date(nums[2], nums[0] - 1, nums[1]);
-    return date;
+
+    if (nums && nums.length === 3) {
+        const year = parseInt(nums[2], 10);
+        const month = parseInt(nums[0], 10) - 1;
+        const day = parseInt(nums[1], 10);
+
+        const date = new Date(year, month, day);
+        return date;
+    }
+
+    return new Date();
 };
 
 const formatDate = (date: Date) => {
-    const options = { year: "numeric", month: "long" };
-    const dateFormatter = new Intl.DateTimeFormat("en-US", options);
-
-    const formattedDate = dateFormatter.format(date);
-    return formattedDate;
+    return DateTime.fromJSDate(date).toLocaleString({
+        year: "numeric",
+        month: "long",
+    });
 };
 
-const sortAndGroup = (articles: ArticleData[]): Map<number, ArticleData[]> => {
+const sortAndGroup = (articles: ArticleData[]): Map<string, ArticleData[]> => {
     const sorted = articles.sort((a, b) => {
-        return getDate(b) - getDate(a);
+        return getDate(b).getTime() - getDate(a).getTime();
     });
     const grouped = sorted.reduce((entryMap, article) => {
         const date = getDate(article);
@@ -40,6 +50,12 @@ const Archive: React.FC<Props> = (props: Props) => {
     const sorted = sortAndGroup(allArticles);
     return (
         <Layout>
+            <NextSeo
+                title="CLOV Log | Archive"
+                description="An organized archive of our progress to-date"
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <Timeline articles={sorted} />
         </Layout>
     );

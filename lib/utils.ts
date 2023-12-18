@@ -7,12 +7,7 @@ export const previewMd = (markdown: string): string => {
 };
 
 export const slugify = (input: string): string => {
-    return input.toLowerCase().replace(/[ \/]/, "-");
-};
-
-export const formatArticleDateFromJs = (date: Date): string => {
-    const dt = DateTime.fromJSDate(date);
-    return dt.toLocaleString(DateTime.DATE_FULL);
+    return input.toLowerCase().replace(/[ /]/, "-");
 };
 
 export const formatArticleDate = (date: string): string => {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NextSeo } from "next-seo";
 import ArticleGrid from "../components/Article/Grid";
 import Layout from "../components/Layout";
 import Tags from "../components/Tags";
@@ -14,24 +15,18 @@ interface Props {
 const Browse: React.FC<Props> = (props: Props) => {
     const [currentTags, setCurrentTags] = useState<string[]>([]);
     const [query, setQuery] = useState<string>("");
-    const [articles, setArticles] = useState<ArticleData[]>(props.articles);
+    const { articles, tags } = props;
+    const [entries, setEntries] = useState<ArticleData[]>(articles);
 
-    const filterArticlesByTags = (tags: string[]) => {
-        setArticles(
-            articles.filter((a) => {
-                for (const tag of a.tags) {
-                    if (tags.includes(tag)) {
-                        return true;
-                    }
-                }
-                return false;
-            })
+    const filterArticlesByTags = (newTags: string[]) => {
+        setEntries(
+            entries.filter((a) => a.tags.some((tag) => newTags.includes(tag)))
         );
     };
 
     const filterArticlesBySearch = (searchQuery: string) => {
-        setArticles(
-            articles.filter((a) => {
+        setEntries(
+            entries.filter((a) => {
                 return (a.title + a.desc)
                     .toLowerCase()
                     .includes(searchQuery.toLowerCase());
@@ -42,10 +37,10 @@ const Browse: React.FC<Props> = (props: Props) => {
     const handleInputChange: React.ReactEventHandler<HTMLInputElement> = (
         event
     ) => {
-        const val: string = event.target.value;
+        const val: string = (event.target as HTMLInputElement).value;
         setQuery(val);
         if (!val.length) {
-            setArticles(props.articles);
+            setEntries(props.articles);
         } else {
             filterArticlesBySearch(val);
         }
@@ -54,7 +49,7 @@ const Browse: React.FC<Props> = (props: Props) => {
     const handleToggleTags = (newTags: string[]) => {
         setCurrentTags(newTags);
         if (!newTags.length) {
-            setArticles(props.articles);
+            setEntries(props.articles);
         } else {
             filterArticlesByTags(newTags);
         }
@@ -62,6 +57,12 @@ const Browse: React.FC<Props> = (props: Props) => {
 
     return (
         <Layout>
+            <NextSeo
+                title="CLOV Log | Browse"
+                description="Browse through our catalog of progress updates, ideas, and more."
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <div className="px-4 mb-4">
                 <h1 className="text-center pb-6 text-6xl font-bold text-white-300">
                     Browse
@@ -74,18 +75,18 @@ const Browse: React.FC<Props> = (props: Props) => {
                     onChange={handleInputChange}
                 />
                 <Tags
-                    tags={props.tags}
+                    tags={tags}
                     selectedTags={currentTags}
                     setTags={handleToggleTags}
                 />
-                <ArticleGrid articles={articles} />
+                <ArticleGrid articles={entries} />
             </div>
         </Layout>
     );
 };
 
 export const getStaticProps = async (): Promise<{ props: Props }> => {
-    const articles = Object.values(await getAllArticles()).flat();
+    const articles = (await getAllArticles()).Abhay; // default for now
     const tags = getUniqueTags(articles);
     outputRSS(articles);
 

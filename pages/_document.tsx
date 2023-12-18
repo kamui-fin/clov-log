@@ -42,8 +42,8 @@ class MyDocument extends Document {
                         href="/safari-pinned-tab.svg"
                         color="#5bbad5"
                     />
-                    <meta name="msapplication-TileColor" content="#2b5797" />
-                    <meta name="theme-color" content="#ffffff" />
+                    <meta name="msapplication-TileColor" content="#f27983" />
+                    <meta name="theme-color" content="#f27983" />
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"

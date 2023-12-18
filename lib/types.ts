@@ -10,7 +10,7 @@ export interface ArticleData {
     mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
     title: string;
     desc: string;
-    date: Date;
+    date: string;
     author: string;
     tags: string[];
 }

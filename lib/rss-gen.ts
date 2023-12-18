@@ -2,8 +2,7 @@ import RSS from "rss";
 import fs from "fs";
 import { ArticleData } from "./types";
 
-// this may change
-const DOMAIN = "https://blogsite.xyz";
+const DOMAIN = "https://clovlog.com";
 
 const outputRSS = async (posts: ArticleData[]): Promise<void> => {
     const feed = new RSS({
@@ -18,7 +17,7 @@ const outputRSS = async (posts: ArticleData[]): Promise<void> => {
         feed.item({
             title: post.title,
             description: post.desc,
-            url: `${DOMAIN}/article/${post.slug}`,
+            url: `${DOMAIN}/article/${post.author.toLowerCase()}/${post.slug}`,
             categories: [],
             author: post.author,
             date: post.date,

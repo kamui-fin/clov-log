@@ -1,12 +1,15 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import Highlight from "react-highlight";
 import { GetStaticPaths } from "next";
 import { MDXRemote } from "next-mdx-remote";
+import { Tab } from "@headlessui/react";
+import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { getAllArticles, getArticleBySlug } from "../../../lib/api";
 import { ArticleData } from "../../../lib/types";
 import Layout from "../../../components/Layout";
-import { Tab } from "@headlessui/react";
 import { formatArticleDate } from "../../../lib/utils";
-import Link from "next/link";
 
 interface PreProps {
     children: React.ReactElement;
@@ -24,23 +27,29 @@ const components = {
     pre: Pre,
 };
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
 }
 
 const Article: React.FC<ArticleData> = (article) => {
-    const { title, date, mdxSource, author } = article;
+    const { title, desc, date, mdxSource, author, slug } = article;
     return (
         <Layout>
+            <NextSeo
+                title={title}
+                description={desc}
+                canonical="https://clovlog.com"
+                themeColor="#daca4f"
+            />
             <section className="px-5 mb-4">
                 <h1 className="text-4xl font-bold text-white-400">{title}</h1>
-                <div className="flex justify-between">
+                <div className="flex flex-wrap mb-4 justify-between">
                     <h2 className="my-4">{formatArticleDate(date)}</h2>
                     <Tab.Group
                         selectedIndex={author.toLowerCase() === "abhay" ? 0 : 1}
                     >
                         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-                            <Link href={`/article/abhay/${article.slug}`}>
+                            <Link href={`/article/abhay/${slug}`}>
                                 <Tab
                                     key="Abhay"
                                     className={({ selected }) =>
@@ -56,7 +65,7 @@ const Article: React.FC<ArticleData> = (article) => {
                                     Abhay
                                 </Tab>
                             </Link>
-                            <Link href={`/article/sai/${article.slug}`}>
+                            <Link href={`/article/sai/${slug}`}>
                                 <Tab
                                     key="Venkatasai"
                                     className={({ selected }) =>
