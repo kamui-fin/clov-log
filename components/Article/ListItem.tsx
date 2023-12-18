@@ -15,11 +15,13 @@ const ArticleListItem: React.FC<Props> = (props: Props) => {
                     article.slug
                 }`}
             >
-                <h1 className="text-2xl cursor-pointer font-bold">
+                <h3 className="text-2xl cursor-pointer font-bold">
                     {article.title}
-                </h1>
+                </h3>
             </Link>
-            <h2 className="pt-1">{formatArticleDate(article.date)}</h2>
+            <h3 className="pt-1 text-white-500">
+                {formatArticleDate(article.date)}
+            </h3>
             <p className="pt-4 text-sm">{previewMd(article.desc)}</p>
         </div>
     );

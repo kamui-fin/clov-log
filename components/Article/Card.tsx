@@ -16,7 +16,7 @@ const ArticleCard: React.FC<Props> = (props: Props) => {
                 }`}
             >
                 <h1 className="text-2xl cursor-pointer font-bold text-white-300">
-                    {article.title}
+                    {`${article.title.substr(0, 50)}...`}
                 </h1>
             </Link>
             <h2 className="pt-3 text-white-300">

@@ -32,7 +32,7 @@ const Article: React.FC<ArticleData> = (article) => {
                 canonical="https://clovlog.com"
             />
             <section className="px-5 mb-4">
-                <h1 className="text-5xl text-center pb-5 font-bold">
+                <h1 className="block text-5xl text-center pb-5 font-bold">
                     Data Science Roadmap
                 </h1>
                 <article className="article pt-2 prose lg:prose-xl max-w-full">

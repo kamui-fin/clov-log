@@ -246,6 +246,7 @@ module.exports = {
         },
     },
     variants: {
+        textColor: ["transparent"],
         extend: {},
     },
     plugins: [require("@tailwindcss/typography")],

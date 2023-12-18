@@ -32,7 +32,7 @@ const AboutUs: React.FC<ArticleData> = (article) => {
                 themeColor="#daca4f"
             />
             <section className="px-5 mb-4">
-                <h1 className="text-5xl text-center pb-5 font-bold text-white">
+                <h1 className="text-5xl block text-center pb-5 font-bold">
                     About Us
                 </h1>
                 <article className="article pt-2 prose lg:prose-xl max-w-full">

@@ -44,11 +44,13 @@ const Article: React.FC<ArticleData> = (article) => {
             <section className="px-5 mb-4">
                 <h1 className="text-4xl font-bold">{title}</h1>
                 <div className="flex flex-wrap mb-4 justify-between">
-                    <h2 className="my-4">{formatArticleDate(date)}</h2>
+                    <h3 className="text-white-500 my-4">
+                        {formatArticleDate(date)}
+                    </h3>
                     <Tab.Group
                         selectedIndex={author.toLowerCase() === "abhay" ? 0 : 1}
                     >
-                        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+                        <Tab.List className="flex space-x-2 rounded-xl bg-blue-900/20 p-1">
                             <Link href={`/article/abhay/${slug}`}>
                                 <Tab
                                     key="Abhay"

@@ -1,20 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 @layer base {
     .article strong {
         @apply text-pink;
     }
-    .article h1,
-    .article h2,
-    .article h3 {
-        @apply bg-gradient-to-r from-amber-500 to-lime-500 text-transparent bg-clip-text;
+
+    h1,
+    h2 {
+        @apply bg-gradient-to-l from-amber-500 to-lime-500 bg-clip-text;
     }
 
     .article a {
         @apply text-harvest-gold;
     }
+}
+
+h1,
+h2 {
+    color: transparent;
+}
+
+.article h1,
+.article h2,
+.article h3 {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
 }
 
 code::before,

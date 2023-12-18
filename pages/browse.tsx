@@ -64,7 +64,7 @@ const Browse: React.FC<Props> = (props: Props) => {
                 themeColor="#daca4f"
             />
             <div className="px-4 mb-4">
-                <h1 className="text-center pb-6 text-6xl font-bold text-white-300">
+                <h1 className="block text-center pb-6 text-6xl font-bold text-white-300">
                     Browse
                 </h1>
                 <input
