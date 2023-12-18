@@ -5,21 +5,32 @@ Just a few special notes:
 - It is widely recommended by the community to not dive straight into technical topics like ML having strong **fundamentals**, i.e. Mathematics. 
 - Continually build projects applying everything you learned! Participating in Kaggle competitions is a great way to do this. It's important to avoid accumulating theory without any sort of practice to cement it. 
 - This roadmap will be continuously evolving as we progress. 
+
 ## Stage 0 - Mathematics
-- [**Linear Algebra**](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011)
+- **Linear Algebra**
+	- MIT OCW [course](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011) by Prof. Strang. This is a legendary course and you must understand all of it before moving on. A strong understanding of Linear Algebra is absolutely necessary.
 	- To get a visual intuition: [3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra)
 	- Stanford Review: [CS229 Linear Algebra](https://cs229.stanford.edu/section/cs229-linalg.pdf)
-- [**Multi-variable calculus**](https://mml-book.github.io/book/mml-book.pdf)
-	- Read Chapter 5 of MML book
-	- Calculus I (Review): [Math Hawaii](https://math.hawaii.edu/~allan/Calculus1-Review.pdf)
+- **Multi-variable calculus**
+	- There's a lot of parts of calculus more used for modeling in physical scenarios, an less often with messy real world discrete data (which use numerical methods). Nevertheless, there are crucial aspects of multi-variable and matrix calculus that every data scientists must know to understand the inner workings of concepts like the neuron activation function, optimization, backpropagation, etc.
+	- Make sure you've filled in holes from Calc 1 & 2:
+		- Taylor and power series basics
+			- Review convergence and divergences of sequences and series
+		- Calculus I (Review): [Math Hawaii](https://math.hawaii.edu/~allan/Calculus1-Review.pdf)
+	- First, go through this filtered curriculum of [Khan Academy](https://www.khanacademy.org/math/multivariable-calculus)
+		- Unit 2
+			- Skip curvature, divergence, curl, laplacian
+		- Unit 3
 	- Matrix Calculus for DL: [Explained.ai](https://explained.ai/matrix-calculus)
-	- Additional source: [D2L Multivariable Calculus](https://d2l.ai/chapter_appendix-mathematics-for-deep-learning/multivariable-calculus.html)
+		- Read up until section 5 (page 23). The rest is application of matrix calculus into neural networks, which is optimally learned during stage 3. The goal of this stage is to primarily just grok the fundamental pure math prerequisites.
 	- Visual Intuition: [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
-- [**Probability** and **Statistics**](https://projects.iq.harvard.edu/stat110/home)
-	- Statistics Fundamentals (StatQuest): [StatQuest YouTube Playlist](https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
-	- Visual intuition: [Seeing Theory](https://seeing-theory.brown.edu/)
-	- Review: [CS229 Probability Review](https://cs229.stanford.edu/section/cs229-prob.pdf)
-	- Review Book: [Probability Stats for DS](https://cims.nyu.edu/~cfgranda/pages/stuff/probability_stats_for_DS.pdf)
+- **Probability & Statistics**
+	- **Primary:** Harvard [STAT 110](https://projects.iq.harvard.edu/stat110/home)
+	- Then, learn statistics fundamentals from StatQuest: [StatQuest YouTube Playlist](https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
+	- Intuitive visualizations (supplement): [Seeing Theory](https://seeing-theory.brown.edu/)
+	- Reviews:
+		- [CS229 Probability Review](https://cs229.stanford.edu/section/cs229-prob.pdf)
+		- [Probability Stats for DS](https://cims.nyu.edu/~cfgranda/pages/stuff/probability_stats_for_DS.pdf)
 	- Learn PCA: [Towards Data Science](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c)
 - Fill in any missing gaps: [Math for ML](https://gwthomas.github.io/docs/math4ml.pdf)
 ## Stage 1 - Data Analysis
@@ -35,6 +46,7 @@ This stage can more or less be completed simultaneously alongside stage 0. These
 ## Stage 3 - Deep Learning
 - [Andrew Ng's DL specialization](https://www.deeplearning.ai/courses/deep-learning-specialization/)
 - [Fast AI course](https://course.fast.ai/)
+- [How Neural Networks Work](http://neuralnetworksanddeeplearning.com/index.html)
 
 Go through both courses. Andrew gives you more theoretical explanations while fast.ai teaches with pytorch (more practical) and hands-on applications.
 ## Stage 4 - NLP
@@ -46,9 +58,11 @@ Go through both courses. Andrew gives you more theoretical explanations while fa
 It's extremely important to keep yourself up to date with the latest breakthroughs and tech, as this is a **cutting-edge field**. By this point, you should have toolkit necessary for reading research papers.
 
 Further exploration:
-- Computer Graphics (e.g. OCR)
+- Computer Graphics (e.g. OCR):
+	- http://cs231n.stanford.edu/
 - LLMs and Vector databases
 	- Llama Index, LangChain, Pinecone, etc.
 - Responsively delivering value with ML: [Made With ML](https://madewithml.com/)
+	- Project ideas: https://github.com/NirantK/awesome-project-ideas
 - Transformers and Transfer Learning
 - etc.. eternal learning -> Intellectual pursuits!
