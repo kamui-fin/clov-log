@@ -21,7 +21,9 @@ const Home: React.FC<Props> = ({ allArticles }: Props) => {
                 themeColor="#daca4f"
             />
             <div className="px-4 mb-6">
-                <h1 className="text-6xl font-bold text-white-300">Progress Log</h1>
+                <h1 className="text-6xl font-bold text-white-300">
+                    Progress Log
+                </h1>
                 <h3 className="my-5 text-white-400 text-xl max-w-3xl leading-7">
                     Just two curious CS majors with an appetite for knowledge.
                     Follow our progress throughout our Machine Learning journey.

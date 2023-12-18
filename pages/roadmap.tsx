@@ -32,10 +32,10 @@ const Article: React.FC<ArticleData> = (article) => {
                 canonical="https://clovlog.com"
             />
             <section className="px-5 mb-4">
-                <h1 className="text-5xl text-center pb-5 font-bold text-white-400">
+                <h1 className="text-5xl text-center pb-5 font-bold">
                     Data Science Roadmap
                 </h1>
-                <article className="pt-2 prose lg:prose-xl max-w-full">
+                <article className="article pt-2 prose lg:prose-xl max-w-full">
                     <MDXRemote {...mdxSource} components={components} />
                 </article>
             </section>

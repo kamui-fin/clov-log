@@ -15,7 +15,7 @@ const ArticleListItem: React.FC<Props> = (props: Props) => {
                     article.slug
                 }`}
             >
-                <h1 className="text-2xl cursor-pointer font-bold text-white-400">
+                <h1 className="text-2xl cursor-pointer font-bold">
                     {article.title}
                 </h1>
             </Link>

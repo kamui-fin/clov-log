@@ -35,7 +35,7 @@ const AboutUs: React.FC<ArticleData> = (article) => {
                 <h1 className="text-5xl text-center pb-5 font-bold text-white">
                     About Us
                 </h1>
-                <article className="pt-2 prose lg:prose-xl max-w-full">
+                <article className="article pt-2 prose lg:prose-xl max-w-full">
                     <MDXRemote {...mdxSource} components={components} />
                 </article>
             </section>

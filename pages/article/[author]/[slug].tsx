@@ -42,7 +42,7 @@ const Article: React.FC<ArticleData> = (article) => {
                 themeColor="#daca4f"
             />
             <section className="px-5 mb-4">
-                <h1 className="text-4xl font-bold text-white-400">{title}</h1>
+                <h1 className="text-4xl font-bold">{title}</h1>
                 <div className="flex flex-wrap mb-4 justify-between">
                     <h2 className="my-4">{formatArticleDate(date)}</h2>
                     <Tab.Group
@@ -57,7 +57,7 @@ const Article: React.FC<ArticleData> = (article) => {
                                             "w-44 rounded-lg py-2.5 text-sm font-medium leading-5",
                                             "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                                             selected
-                                                ? "bg-white text-blue-700 shadow"
+                                                ? "bg-harvest-gold text-blue-700 shadow"
                                                 : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                                         )
                                     }
@@ -73,7 +73,7 @@ const Article: React.FC<ArticleData> = (article) => {
                                             "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
                                             "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                                             selected
-                                                ? "bg-white text-blue-700 shadow"
+                                                ? "bg-harvest-gold text-blue-700 shadow"
                                                 : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                                         )
                                     }
@@ -84,7 +84,7 @@ const Article: React.FC<ArticleData> = (article) => {
                         </Tab.List>
                     </Tab.Group>
                 </div>
-                <article className="pt-2 prose lg:prose-xl max-w-full">
+                <article className="article pt-2 prose lg:prose-xl max-w-full">
                     <MDXRemote {...mdxSource} components={components} />
                 </article>
             </section>
