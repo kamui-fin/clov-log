@@ -1,60 +1,83 @@
 We have compiled this roadmap as a way to navigate the vast field and countless amount resources. We hope this can serve as inspiration for those of you looking to formulate your own journeys.
 
-Just a few special notes:
-- Our tip is to build goals, actionable tasks, and deadlines surrounding this (or your own) roadmap to stay on track.
-- It is widely recommended by the community to not dive straight into technical topics like ML having strong **fundamentals**, i.e. Mathematics. 
-- Continually build projects applying everything you learned! Participating in Kaggle competitions is a great way to do this. It's important to avoid accumulating theory without any sort of practice to cement it. 
-- This roadmap will be continuously evolving as we progress. 
+For serious learners, it's recommended to build goals, actionable tasks, and deadlines surrounding this (or your own) roadmap to stay on track. 
+
+Always be building projects and applying everything you learned! Participating in Kaggle competitions is a great way to do this. The biggest thing is to avoid accumulating theory without any sort of practice to cement it. 
+
+Note: This document is continuously evolving as we ourselves progress and learn more. 
 
 ## Stage 0 - Mathematics
-- **Linear Algebra**
-	- MIT OCW [course](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011) by Prof. Strang. This is a legendary course and you must understand all of it before moving on. A strong understanding of Linear Algebra is absolutely necessary.
-	- To get a visual intuition: [3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra)
-	- Stanford Review: [CS229 Linear Algebra](https://cs229.stanford.edu/section/cs229-linalg.pdf)
-- **Multi-variable calculus**
-	- There's a lot of parts of calculus more used for modeling in physical scenarios, an less often with messy real world discrete data (which use numerical methods). Nevertheless, there are crucial aspects of multi-variable and matrix calculus that every data scientists must know to understand the inner workings of concepts like the neuron activation function, optimization, backpropagation, etc.
-	- Make sure you've filled in holes from Calc 1 & 2:
-		- Taylor and power series basics
-			- Review convergence and divergences of sequences and series
-		- Calculus I (Review): [Math Hawaii](https://math.hawaii.edu/~allan/Calculus1-Review.pdf)
-	- First, go through this filtered curriculum of [Khan Academy](https://www.khanacademy.org/math/multivariable-calculus)
-		- Unit 2
-			- Skip curvature, divergence, curl, laplacian
-		- Unit 3
-	- Matrix Calculus for DL: [Explained.ai](https://explained.ai/matrix-calculus)
-		- Read up until section 5 (page 23). The rest is application of matrix calculus into neural networks, which is optimally learned during stage 3. The goal of this stage is to primarily just grok the fundamental pure math prerequisites.
-	- Visual Intuition: [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
-- **Probability & Statistics**
-	- **Primary:** Harvard [STAT 110](https://projects.iq.harvard.edu/stat110/home)
-	- Then, learn statistics fundamentals from StatQuest: [StatQuest YouTube Playlist](https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
-	- Intuitive visualizations (supplement): [Seeing Theory](https://seeing-theory.brown.edu/)
-	- Reviews:
-		- [CS229 Probability Review](https://cs229.stanford.edu/section/cs229-prob.pdf)
-		- [Probability Stats for DS](https://cims.nyu.edu/~cfgranda/pages/stuff/probability_stats_for_DS.pdf)
-	- Learn PCA: [Towards Data Science](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c)
-- Fill in any missing gaps: [Math for ML](https://gwthomas.github.io/docs/math4ml.pdf)
-## Stage 1 - Data Analysis
-This stage can more or less be completed simultaneously alongside stage 0. These tools are part of any skilled data scientist's toolset and you should focus on achieving **fluency** with data wrangling & analysis in python. Unlike full stack, there's not that many here to learn, so focus on depth rather than depth!
 
-- [Pandas](https://pandas.pydata.org/)
-- [Numpy](https://numpy.org/)
-- [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/)
-- [SQL](https://www.w3schools.com/sql/)
+Before diving into code, take a step back and build up your fundamentals. Math is the language of ML, and we must learn to understand it fluently.
+
+### Linear Algebra
+
+- MIT OCW [course](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011) by Prof. Strang. This is a legendary course and you must understand all of it before moving on. A strong understanding of Linear Algebra is absolutely necessary.
+- To get a visual intuition: [3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra)
+- Stanford Review: [CS229 Linear Algebra](https://cs229.stanford.edu/section/cs229-linalg.pdf)
+
+### Multi-Variable Calculus
+
+First, [review](https://math.hawaii.edu/~allan/Calculus1-Review.pdf) your single-variable calculus. If you haven't already taken Calculus 1 & 2, definitely go through the [MIT](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/) calculus course first. For some visual Intuition, check out [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
+
+A lot of multi-variable calculus is more used for physical modeling, and less often with messy real world discrete data (which use numerical methods). Nevertheless, there are crucial aspects of multi-variable and matrix calculus that every data scientist must know to understand the inner workings of concepts like backpropagation, gradient descent, etc.
+
+You can learn the necessary multi-variable calculus by going through Units 2 and 3 of [Khan Academy](https://www.khanacademy.org/math/multivariable-calculus) Skip curvature, divergence, curl, and laplacian.
+
+Now you're ready for the [matrix calculus](https://explained.ai/matrix-calculus) required for deep learning. Read up until section 5 (page 23). The rest is application of matrix calculus into neural networks, which is optimally learned during stage 3. The goal of this stage is to primarily just grok the fundamental pure math prerequisites.
+### Probability
+
+- **Primary:** Harvard [STAT 110](https://projects.iq.harvard.edu/stat110/home)
+- Then, learn statistics fundamentals from StatQuest: [StatQuest YouTube Playlist](https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
+- Intuitive visualizations (supplement): [Seeing Theory](https://seeing-theory.brown.edu/)
+- Reviews:
+	- [CS229 Probability Review](https://cs229.stanford.edu/section/cs229-prob.pdf)
+	- [Probability Stats for DS](https://cims.nyu.edu/~cfgranda/pages/stuff/probability_stats_for_DS.pdf)
+- Learn PCA: [Towards Data Science](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c)
+	
+## Stage 1 - Python & Data Analysis
+
+If you aren't familiar with Python yet, go through the official [Python tutorial](https://docs.python.org/3/tutorial/index.html).
+
+To performing exploratory data analysis, feature engineering, and understanding your data all require fluency with data wrangling tools in Python. These include Pandas, Numpy, Matplotlib, and Seaborn. 
+
+Luckily, the inventor of Pandas has a free online [book](https://wesmckinney.com/book/) covering everything you need to learn. The final chapter is arguably the most important, where he walks you through several datasets and performs EDA.
+
 ## Stage 2 - Machine Learning
-- [Andrew Ng's ML specialization](https://www.deeplearning.ai/courses/machine-learning-specialization/)
-- [Introduction to Statistical Learning](https://www.statlearning.com/)
-## Stage 3 - Deep Learning
-- [Andrew Ng's DL specialization](https://www.deeplearning.ai/courses/deep-learning-specialization/)
-- [Fast AI course](https://course.fast.ai/)
-- [How Neural Networks Work](http://neuralnetworksanddeeplearning.com/index.html)
 
-Go through both courses. Andrew gives you more theoretical explanations while fast.ai teaches with pytorch (more practical) and hands-on applications.
-## Stage 4 - NLP
-- [Andrew Ng's NLP specialization](https://www.deeplearning.ai/courses/natural-language-processing-specialization/)
-- [Speech and Language Processing (The Bible)](https://web.stanford.edu/~jurafsky/slp3/)
-- [Hugging face NLP course](https://huggingface.co/learn/nlp-course/chapter1/1)
-- [LLM University](https://docs.cohere.com/docs/llmu)
+Congratulations on making it to this stage! You're now ready to dig into some hands-on machine learning. [Andrew Ng's ML specialization](https://www.deeplearning.ai/courses/machine-learning-specialization/) is arguably the best course to get started with.
+
+I consider it as a tour of many ML methods like regression, trees, clustering, neural networks, and more, while still providing the basic math knowledge behind them. 
+
+As it is merely a starting point, somewhere along the line you'd need to pick up [Introduction to Statistical Learning](https://www.statlearning.com/) to fill in the rest of the math that the course skipped. Feel free to start this anytime you'd like, but we're thinking of going through it after gaining enough practice and experience using it to solve real-world problems.
+## Stage 3 - Deep Learning
+
+Next up, it's time to dive deep into deep learning! 
+
+I personally found [3b1b's neural network playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) to be a great starting place. His visual backpropagation and gradient descent explanation was also very understandable.
+
+To go deeper and grokk more theory, go through Andrew Ng's Deep Learning [Specialization](https://www.deeplearning.ai/courses/deep-learning-specialization/).
+
+Simultaneously, go through the Fast AI [course](https://course.fast.ai/) which really equips you with practical knowledge for making your own projects. He also teaches with pytorch, which is recommended to be familiar with as most research papers utilize it.
+
+### Practice Reminder
+
+Remember to always supplement your studies with practice! For instance, after learning the basics of neural networks, you can try to create your own neural network mini-library. This is also a great point for getting started with Kaggle. 
+
+For a wide assortment of ML project ideas, you can check out the following resources
+- [Beginner ML projects](https://github.com/shsarv/Machine-Learning-Projects)
+- [Huge compilation of ideas](https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code)
+
+## Stage 4 - NLP (specialization)
+
+For a broad overview of NLP, deeplearning.ai has a great [resource](https://www.deeplearning.ai/resources/natural-language-processing/). 
+
+By far the best course I've found on NLP is Stanford's [CS244N](https://www.youtube.com/playlist?list=PLoROMvodv4rOSH4v6133s9LFPRHjEmbmJ).  While you're going through CS244N, explore around with other NLP courses focused on specific topics. Here are some we found quite interesting:
+
+- Transformers: [Hugging face NLP course](https://huggingface.co/learn/nlp-course/chapter1/1)
+- Andrej Karpathy: [Let's Build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY&list=WL)
 ## Stage 5 and Beyond
+
 It's extremely important to keep yourself up to date with the latest breakthroughs and tech, as this is a **cutting-edge field**. By this point, you should have toolkit necessary for reading research papers.
 
 Further exploration:
