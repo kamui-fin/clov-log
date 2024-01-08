@@ -51,6 +51,4 @@ export const getStaticProps = async (): Promise<{
         },
     };
 };
-
 export default Workout;
-
