@@ -1,0 +1,66 @@
+---
+title: "Week 7: Wrapping up theory and shifting gears towards hands-on projects."
+desc: Finishing up Probability, CNNs & RNNs, and beginning new exciting projects.
+date: 01-14-2024
+author: Abhay Srivatsa
+tags:
+  - practice
+---
+## Week In Review
+
+Checkpoint reached! Wrapped up most of the theory-studying and finally began to immerse myself with code.
+
+TLDR this week:
+- Finished STAT 110
+- Finished labs of deep learning specialization
+- Reviewed fast.ai, CNNs, RNNs, probability
+- Built a sentiment analysis model on rotten tomato reviews
+- Built a copypasta generator using bidirectional LSTMs
+
+Overall, I feel like this is a great time to pause with the theory speedrun, and shift towards a more practice-heavy approach. I have tons of fun project ideas and kaggle kernels lined up, so I'll be busy for a while! 
+
+It's quite an interesting feeling when I look back to see how far I came, but at the same time realize how much more there is to explore. In the end, it's a great positive feedback loop and keeps my head in the game. 
+## Progress Timeline
+### January 8, 2024
+- STAT 110 Lecture 29 on the Central Limit Theorem. By far one of the more significant theorems to know. The proof was a bit involved but nothing too unwieldy. I think I need a bit more visual intuition on this though.
+- Completed 3 fun CNN labs implementing a ResNet, performing transfer learning on MobileNet, and using YOLO for car detection. I plan on doing a deep dive into YOLO later on by reading the original paper.
+
+Unfortunately, I got slightly sick today (not too serious though), so that's about all I could manage to do today. Consistency above all, in the end.
+### January 9, 2024
+Blessed with a fast recovery, I grabbed ahold of this opportunity to make huge leaps in progress.
+
+- Finished STAT 110! Specifically, watched lectures 30-34. I felt suddenly inspired to study more stats today. In terms of math-heavy theory, ISLR is the next stop!
+- Went through the 12-page Stanford CS229 Probability & Statistics review.
+- Finished the rest of the labs for course 4.
+	- U-net in Keras for image segmentation (W3 Lab 2)
+	- Facial recognition through comparing image embeddings.
+	- Neural style transfer by optimizing the cost functions based on the gram matrix.
+### January 10, 2024
+- Read through the rest of course 5 labs. In all honesty, I found them to spoonfeed me with too much starter code, hints, and instructions, and it doesn't quite match my learning style. Struggling through projects from scratch is the way I learn best.
+- Began a new project for sentiment analysis on rotten tomato reviews. So far I used to the tokenizer to build a vocabulary from the corpus, and initialized embeddings.
+### January 11, 2024
+- Reviewed andrew ng theory of course 5 surrounding GRU, LSTM, Word embeddings, and Language models.
+- Watched a video describing how torch.nn.Embedding lets you train your own embeddings with a downstream task like predicting the next character.
+- First kaggle submission! Finished my first iteration on the sentiment analysis LSTM model with PyTorch. Albeit my model didn't perform the best on their test set, it was a thrilling experience. Next steps are definitely to read the top posts, and keep iterating on my model until it reaches atleast a score of 0.6.
+
+This only gets more and more fun!
+### January 12, 2024
+- Reviewed all fast.ai notebooks of lectures 1-8. To be honest, I don't see myself using the fast.ai library but the parts on random forests, gradient accumulation, and other miscellaneous parts was a good refresher.
+- Reviewed half of the STAT 110 cheat sheet.
+- Reviewed the rest of course 5 of the deep learning specialization.
+- Finished iterating on the sentiment analysis model. Modified the LSTM architecture a bit and most importantly fixed how I was pre-processing the data. Instead of `<UNK>` tokens I merged the vocab for both sets, and I also converted the tokens to lemmas. With an additional LSTM layer and a much higher hidden + embedding dimensions, I was able to get my model performing as normal. Enjoyed getting to read other top submissions as well. Tomorrow I'd like to finish reading the solution that uses HuggingFace transformers.
+
+A review focused day with a bit of practice. Planning on wrapping up my review tomorrow!
+### January 13, 2024
+- Reviewed Course 4 on CNNs from the DL specialization.
+- Finished reviewing the rest of the STAT 110 cheat-sheet.
+- Started and finished a new notebook building a Bidirectional LSTM-based language model to generate copypastas. This was a super exciting experience seeing what my model could generate! An interesting extension would be to switch this to a transformer-based architecture to improve results.
+
+Wrapped up my reviewing today, and I'm looking to putting my full effort into Kaggling and projects! Next up will be building a recommendation system for goodreads books.
+### January 14, 2024
+I started a notebook on implementing different kinds of recommender systems for the goodreads dataset. Today I coded up a user-user and item-item memory-based model using cosine similarity. I was running into memory issues with this approach when computing this gigantic matrix, so I started implementing a neural network-based approach. I found it amazing that a recommendation problem could be solved with matrix factoring, especially with something like SVD.
+## Goals for next week
+- Continue exploring recommendation systems and implementing them for the Goodreads dataset. 
+- Begin ISLR with a relaxed, but consistent pace of around 10 pages a day. 
+- Keep practicing! This is a period of time I'd like to dedicate mostly to experimenting on my own.
+
