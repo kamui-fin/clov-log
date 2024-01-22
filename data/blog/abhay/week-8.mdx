@@ -1,0 +1,76 @@
+---
+title: "Week 8: Dynamic of Statistical Learning theory and hands-on Kaggle practice"
+desc: 'In this week, we began reading the famous "bible" of ML: Introduction to Statistical Learning (with Python). We also practiced recommendation systems, K-means, and regression.'
+date: 01-21-2024
+author: Abhay Srivatsa
+tags:
+  - practice
+  - islr
+---
+## Week In Review
+
+I was quite surprised how much we got done with this being our first week of our spring semester. The joy from actually building models and exploring data can't be overstated.
+
+We also created a new habit of starting the day off with reading 10 pages of statistical learning theory from ISLR. This harmony between theory and practice is starting to pay off in our efforts on Kaggle as well.
+
+TLDR this week:
+- Developed a goodreads recommendation system using 3 different collaborative filtering techniques.
+- Implemented digit recognition with CNNs.
+- Used unsupervised learning methods to segment customers from eCommerce data. Also formally learned PCA with eigenanalysis.
+- Started reading through ISLR. Read around ~140 pages, took notes, and completed conceptual exercises.
+- Started advanced housing prices Kaggle competition and developed baseline model.
+- Began the Stanford NLP course, currently on lecture 2.
+
+Kaggle Doodle Do!
+## Progress Timeline
+### January 15, 2024
+Heavily iterated on my book recommendation system:
+- Performed more EDA on the datasets and created more visualizations with seaborn
+- Added two different kinds of models to compare and contrast: 1) A deeper neural CF model with concatenation and a MLP 2) A simple dot product of embeddings model
+- Cleaned up notebook and annotated much more of my code. It was pretty fun refactoring all the training code, as it felt like activating the SWE side of me. Made a pretty nifty `fit()` function!
+- Finally, I actually used the NN to generate rating predictions.
+
+This project has really taught me a lot already, especially on the iterative nature of ML. Watching my loss function never drop was more painful than I thought haha, but it just meant figuring out the hyperparameters and fixing up bugs. Overall, I'm ready to wrap this up tomorrow after including an SVD approach. Me and Sai had a CLOV session today and agreed to begin ISLR tomorrow.
+### January 16, 2024
+- Read 75 pages of Introduction to Statistical Learning with Python.
+- Watched 45 minutes of lecture 1 of Stanford NLP course on word2vec.
+- Wrapped up my goodreads recommender system notebook and uploaded it. I finally figured out the solution to the memory usage issue with generating the cosine similarity matrix. It's much better to compute similarity vectors on demand!
+- Revisited my old MNIST implementation and improved accuracy by using CNNs, Max poolings, batch norm, dropout, etc. Learned a lot about how much data augmentation helps too.
+- Started on a new kaggle of eCommerce transactions data to segment customers, extract anomalies, and overall explore ways to visualize consumer spending. Would be fun to include some sales predictions as well!
+
+Today marks the end of winter break, and I'm extremely happy about our progress throughout. Now that I think about it, CLOV really lit a fire inside of me again when it comes to grinding computer science this passionately. The ball shall keep rolling, fellow clovers.
+
+### January 17, 2024
+- 10 pages of ISLR. They were extremely dense and stats-heavy, so I took quite a while to process it and take good notes.
+- Half of lecture 2 of Stanford NLP. Realized I'd like to focus more on practicing for the upcoming hackathon, so pausing this for now.
+- Continued on my customer segmenting notebook. Learned how to apply PCA as well as many different categorical encodings for K-means to work. I came across K-modes too and that paper definitely looks like a good read later on.
+
+Today was a bit chaotic with classes at unusual timings, but nevertheless one step closer!
+### January 18, 2024
+- Learned about the IsolationForest algorithm to detect outliers. Using IQR also seems like another method but I haven't really looked into it yet.
+- Learned PCA Analysis with linear algebra. It's super cool to see covariance matrices and eigenvectors/orthogonality mesh together to create such a useful tool. I needed this in my customer segmentation project as well to prevent the curse of dimensionality.
+- Read pages 86 - 96 of ISLR on multiple linear regression and interaction terms. Love this new habit of getting up early in the morning with a few pages of this book.
+- After learning about PCA, I continued on my customer segmentation project. Today I worked on deriving an entirely new dataset on customer-centric information like RFM from the transactional data. I realized I was applying KMeans on the wrong data haha.
+	- Can't stress enough how much I'm learning from these top notebooks. I'm under the conclusion that in the beginning, it's absolutely okay to follow the solutions without being able to come up with them yourself. It's just like leetcode!
+### January 19, 2024
+- Pages 96 - 106 of ISLR on outliers.
+- Reviewed key linear algebra concepts with Sai to further cement our understanding of PCA.
+- Finished up my cutomer segmentation notebook. Added silhouette plot analysis, PCA visualization, and histogram visualization of the clusters. I had a bit of a hard time on the evaluation and iteration phase as it's way different than supervised learning.
+
+Excited to keep plowing through Kaggle notebooks bit by bit!
+### January 20, 2024
+- Rest of chapter 3 ISLR
+- Started on the advanced housing prices regression kaggle. As I enjoy following an iterative process, I jumped straight into churning out some models as fast as possible. Tried out gradient boosting (which I still need to learn the theory behind) and ridge regression (normal linear regression didn't work). I also tried out a MLP which seemed to perform even worse than ridge regression, this is something I need to debug.
+
+Overall, a decent start to the notebook. My goal is to extract as much knowledge as I can out of this project, as regression is truly a fundamental concept to ML. Looking forward to working through the ISLR exercises tommorow in the CLOV session, as well as presenting my previous notebooks.
+### January 21, 2024
+- ISLR 10 pages on logistic regression
+- Completed practice problems for chapter 2 and 3 of ISLR during CLOV session
+- Performed in-depth EDA on housing dataset and visualized the correlations better. It was mostly trying to figure out the seaborn/matplotlib API today as most of today was plotting-heavy. I also learned about the different stages of EDA, and in general found a generic way to structure my notebooks.
+## Goals for next week
+- Finish chapter 4, 5, and get through a portion of chapter 6 of ISLR with a consistent pace.
+- Iterate on the advanced housing regression competition and submit my predictions. 
+- Begin working through the Titanic and Space Titanic competitions after developing a sophisticated knowledge of logistic regression through ISLR. 
+
+At first, we paused the stanford NLP course in order to focus on practicing more. However, we decided it'd be best to resume the course in a slow but consistent pace, just like we're doing with ISLR. 
+
