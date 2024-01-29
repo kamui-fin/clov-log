@@ -1,0 +1,82 @@
+---
+title: "Week 9: XGBoost theory & Advanced house price regression"
+desc: "More consistent ISLR reading and exploring gradient boosting methods." 
+date: 01-28-2024
+author: Abhay Srivatsa
+tags:
+  - kaggle
+  - islr
+---
+## Week in Review
+
+TLDR this week:
+- Read ~115 pages of ISLR up until PCA section (chapter 6).
+- Thoroughly iterated on house price competition to get top 10%.
+- Learned Gradient Boosting, AdaBoost, and most importantly XGBoost.
+
+During this week, I felt like I was growing somewhat of an inclination towards classical ML models, as opposed to neural networks (for tabulated data). Being able to not only predict, but infer from parameters and statistical tests lets you truly understand your data in and out. 
+
+From working on this house price dataset, I learned that sometimes simple is just straight up better, especially after witnessing plain old regularized regression outperforming a whole neural network. 
+
+Quoting some guy on stack exchange:
+> Assumptions give you power - when they are valid.
+
+## Progress Timeline
+### January 22, 2024
+
+- ISLR 10 pages on linear discriminant analysis.
+- Further development on my advanced housing regression notebook.
+
+Applied feature transformation to fix skewness, and switched to xgboost and lasso regression (literally just linear regression but with l1 reg). I still have no idea how gradient boosting works, so my next goal is to deep dive into that. I'm also curious as to why lasso seems to perform better than ridge in this case. 
+
+It was really cool seeing how interpretable these models! A lot of features seemed to be more useless than I initially thought. Learned how we can apply k-fold CV to try out different values for alpha when tuning hyperparameters. I also blended the two model outputs together and made it to top 10% of the leaderboard. 
+
+There's so much more to learn out of this dataset, and I've only scratched the surface. Only gets deeper and deeper!
+### January 23, 2024
+
+- ISLR 10 pages on naive bayes and comparing it with QDA & LDA
+- Mainly spent the day trying to understand the theory + math behind gradient boosting regression and classification. Watched the first 3 vids of StatQuest on this.
+- Started learning the theory behind XGBoost, the ensemble model that shows up ALL the time on Kaggle. Watched the first video of the StatQuest playlist for this.
+
+Today was mainly back to theory, but it's something I really wanted to do for a while as boosting was part of my backlog. Random forests are cool, but boosted trees are even cooler!
+### January 24, 2024
+
+- 10 pages of ISLR finishing up the theory of poisson regression
+- Finished learning about XGBoost and Gradient Boosting, and the mathematics behind it. This took quite a bit to wrap my head around initially, especially with all the optimizations it features.
+
+Not too much, not too little, just another day of CLOVing! It's not the volume, but the consistency that matters.
+### January 25, 2024
+
+- 10 pages of ISLR on cross validation approaches
+- Learned the basics of SVM and the polynomial kernel with StatQuest. I'm sure there's quite a bit more linear algebra involved with it, so next week I'd love to deep dive into it further.
+
+Can't say today was a particularly good day of CLOVing, but knowledge gained is knowledge earned. I'm excited for HackTAMU in a few days!
+### January 26, 2024
+
+- 10 pages of ISLR on bootstrapping, finished chapter 5.
+- Finished up my house prices regression notebook. I topped it off by incorporating meta-model stacking and blending to get some pretty good results.
+
+Besides the usual, tommorow morning is hackathon day!
+### January 27 & 28, 2024
+
+- 20 pages of ISLR on regularization.
+
+This weekend was our day at Texas A&M's hackathon! It was a full 24-day group effort (and little sleep), and we cooked up a gamified platform to incentivize users to save more. We even won the prize for MLH's track! Bottom line, we had lots of fun and it was a great review of web development. 
+
+Regardless, as CLOVers, we did still squeeze in our mandatory 10 pages a day of ISLR. Tommorow will be a slight catch up day, but rest assured, we'll be back stronger than ever before!
+
+## Changelog
+
+Quite often, we'd learn a fresh new concept outside of ISLR that's slightly hard to grasp, and we'd "present" our understanding on a separate day within the week. 
+
+We did this with PCA and XGBoost, so why not make it a CLOV tradition and make it a habit? 
+
+What's more, we also do something similar with Kaggle, as you might've noticed. Each week, we try to deep dive into a single dataset/competition and present it. What's wonderful about this approach is that it's an excellent way to improve communication in the language of data. 
+
+Of course, we plan on continuing this habit as well, regardless of whether the notebooks we choose are the same.
+## Goals for next week
+
+- Conceptual presentation on SVM and the kernel trick
+- Kaggle presentation on the Titanic competition
+- 2 lectures of Stanford NLP
+- ISLR review after we reach halfway mark next week
