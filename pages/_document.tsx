@@ -6,7 +6,6 @@ import Document, {
     DocumentContext,
     DocumentInitialProps,
 } from "next/document";
-import Script from "next/script";
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -59,7 +58,7 @@ class MyDocument extends Document {
                     />
                     <script
                         async
-                        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                        src="https://www.googletagmanager.com/gtag/js?id=G-PSXLRN69WK"
                     />
                     <script
                         dangerouslySetInnerHTML={{
