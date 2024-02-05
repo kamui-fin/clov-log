@@ -6,6 +6,7 @@ import Document, {
     DocumentContext,
     DocumentInitialProps,
 } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -55,6 +56,22 @@ class MyDocument extends Document {
                     <link
                         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
                         rel="stylesheet"
+                    />
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                    />
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PSXLRN69WK', {
+              page_path: window.location.pathname,
+            });
+          `,
+                        }}
                     />
                 </Head>
                 <body className="bg-blue text-white relative">
