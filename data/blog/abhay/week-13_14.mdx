@@ -1,0 +1,135 @@
+---
+title: "Weeks 13 & 14: Moving past NLP into the real world"
+desc: "Finishing CS244N & ISLR and beginning our paper-reading & projects adventure."
+date: "03-03-2024"
+author: "Abhay Srivatsa"
+tags:
+  - "nlp"
+  - "projects"
+  - "papers"
+---
+## Weeks in Review
+
+TLDR this week:
+- Finished ISLR!
+- Finished cs244N!
+- Read 4 papers:
+	- DeepFM & xDeepFM (RecSys)
+	- LogHub & A survey on deep anomaly detection for logs
+- Worked on xDeepFM implementation and made further progress on my recommender personal project.
+- We began framing LogSense, where we began peering into the current SoTA of intelligent log analysis.
+
+This two weeks were brimmed with progress in all aspects, and I'm especially happy that we transitioned into stage 5. Leaving behind the courses and books, and moving towards tackling challenging projects. To supplement our practice, our main source of thery have shifted towards reading research papers, down to the meat of things! 
+
+I think it's truly been an absolute roller-coaster of an ML journey so far. I would have never expected that we'd be able to make such strides of progress in such a short period of time. But moreover, it's our **consistency** that I'm proud of — logging everyday, and always making sure a day never ends without learning something new!
+
+CLOV has taught me a lot about time management and breaking down lofty goals, and we've been able to really adapt to our environment regardless of e.g. midterms going on. 
+## Progress Timeline
+### February 18, 2024
+
+Today was our CLOV session!
+
+- Worked through ISLR problem-sets for chapters 9 & 10.
+- Thoroughly reviewed backpropagation matrix-calculus.
+- Reviewed assignment 3 on dependency parsing.
+- Brainstormed improvements to website and published our biweekly CLOV entries!
+- NLP lecture 12 (part two) on Natural Language Generation
+
+Teamwork makes the dreamwork. We got a lot done in today's meetup, and backprop has never made this much sense to me before. We also sketched out a rough sense of what's coming up next as well.
+### February 19, 2024
+
+- ISLR 10 pages finishing chapter 12 on unsupervised learning.
+- Half of NLP lecture 13 on conference resolution
+
+Relatively quiet day, that is, until I got an interview from Dell! With many exams coming up and interview prep to do, we decided we should lighten up our workload temporarily. Just adjusting the knobs as we go!
+### February 20, 2024
+
+- ISLR 4 pages starting chapter on multiple hypothesis testing and reviewing T stat & p-values.
+- Finishing NLP Lecture 13 up.
+### February 21, 2024
+
+- ISLR 6 pages continuing chapter 13
+- NLP Lecture 14 on T5 & LLMs.
+
+It was super enlightening to see the experiments carried out to get a better feeling for what an LLM really learns, how much it memorizes, and the effect of different approaches. It was a whirlwind of information though, so it took some time to digest what was going on, especially since he breezed past new topics like backwards translation & temperature scaling.
+### February 22, 2024
+
+- ISLR 10 pages exploring different statistical methods for multiple hypothesis testing.
+- 50 minutes into NLP Lecture 15. Just a thought: if the KGLM can only be single-hop, how could an external memory based approach even be effective enough in the real world? Oh wait, that's where RAG comes in!
+
+We're starting to see the shore! Buckle up as we push through this sprint of theory.
+### February 23, 2024
+
+- Finished ISLR multiple hypothesis testing chapter. Only one more chapter left!
+- Finished up NLP Lecture 15 on improving knowledge in LLMs.
+### February 24, 2024
+
+- ISLR last 20 pages of the survival analysis chapter
+- NLP lecture 15 & 17
+- Resumed my VN recommender project
+
+Today is yet another milestone... we made it to the finishline of ISLR and NLP!! All the remains is finishing up the remaining 3 problemsets, and going through assignment 5.
+### February 25, 2024
+
+In today's CLOV session:
+
+- We completed the last 3 ISLR problem-sets for survival analysis, unsupervised learning, and multiple testing.
+- Reviewed the transformer architecture
+- Finalized our plan moving past the ISLR & CS224N phase:
+	- As we conclude this theory "sprint", we want to return to working on projects heavily.
+	
+Besides that, I also continued work on my recommender, and experimenting with different algorithms using the `surprise` library.
+### February 26, 2024
+
+- On my recommender project, I established a baseline with SVD and found that my neural matrix factoring model performed 2x better. I also fixed up my recommendation sampling code and now it generates decent recommendations after some filtering. Currently, the model only makes use of explicit low-order features (i.e. ratings), so tommorow I'm going to start reading the xDeepFM paper which is a _much_ more complex architecture that can learn many explicit & implicit high-order feature interactions.
+- Sai and I finalized a project proposal for our NLP capstone project that we will be starting next week. It's an exciting topic with an exciting application: anomaly detection on logs across distributed systems!
+
+Overall, I'm really excited that we finally made it to **Stage 5**, where we escape tutorial hell and mainly learn from research papers and building real world projects!
+### February 27, 2024
+
+- Learned about autoencoders and how to implement it with pytorch for MNIST. I encountered this concept when finding out they could be used for collaborative filtering. Really starting to love this approach of learning new things as I come across interesting things in the wild.
+- Read about the cold start problem in-depth on Wikipedia and how to mitigate it.
+- Read my first paper! As xDeepFM largely borrows ideas from DeepFM, I decided ot read the DeepFM paper first. The idea of being able to automatically learn high and low order feature interactions efficiently is incredible. Can't wait to dive into the xDeepFM paper tommorow to see how it builds upon this!
+
+Quenching my thirst to go deeper into the state-of-the-art of recommendation systems. I'm really enjoying this!
+### February 28, 2024
+
+- Read through the entire xDeepFM paper **two times**, and deeply understood the math behind this CNN & RNN fusion inspired approach called CIN that models feature interactions on a vector level, rather than bit-wise like a normal DNN does.
+- Started working on a pytorch implementation of xDeepFM
+
+This makes it my 2nd read paper already! Implementing papers feels incredibly great, allowing me to apply it to different datasets while also ensuring I understand the theory well. Feynman approach as always!
+### February 29, 2024
+
+Continued PyTorch implementation of xDeepFM and made it work with the batch dimension. Currently, the model seems to be sort of working... but I'm very unconvinced that it's bug-free and even optimal enough. Definitely need to keep refining my implementation and make sure it's ready to go before applying it to a large dataset. This week will be largely be dedicated to making progress on this project, before we begin our capstone project on Sunday!
+### March 1, 2024
+
+- Began to brainstorm more high-level components of the eventual web-app I'd be building for my recommender project. Decided I need to take a step back in order to better understand the use-cases and UX I'm going for.
+- As I'm wrapping up my xDeepFM implementation, I started brainstorming several more content features to include in the final model.
+
+Overall excited about the trajectory of this project and the countless learning opportunities along the way! It really is exciting to build something personally useful. As an aside, I found a "competitor", but they seem to be using a much more basic content-based approach. I'm definitely one of the first to be attempting to apply a more complex architecture to vndb website (hopefully with not too much cost haha).
+### March 2, 2024
+
+As I was looking for ways to optimize my implementation, I figured out I could replace all those nested for-loops with a cleverly constructed 1-dimensional CNN with a filter size of 1. I started to finally understand the model much better after drawing out the tensor operations on a piece of paper, and keeping track of all the dimensions. 
+
+Started cross-referencing an official implementation just to make sure I'm on the right track, as ultimately this will be used in a production system. Can't wait to present my understanding of the paper tommorow! We're also going to be starting our log project (currently named LogSense). This means pausing this recommendation project slightly but I should be able to make progress in both during the upcoming spring break. 
+
+There's just one thing I'm sure of. When it comes to projects, it's always depth over breadth. If it means beginning a log anomaly detection project, we must absolutely research as much as possible!
+### March 3, 2024
+
+During our CLOV session:
+- Presented the xDeepFM paper to Sai as a way to test my understanding and show how much more interesting RecSys can get.
+- Reviewed 4 lectures of NLP
+- Created a strategy to take a crack at our LogSense project. First steps involve reading important papers and surveys to get a decent understanding of the problem space.
+
+Individually:
+- Read the LogHub paper describing the dataset in further detail and discussing various applications of it
+- Read a survey of deep-learning systems for anomaly detection on logs. These 20 pages provided a fantastic birds-eye view of the space, and now I have a much better idea of the direction we are headed.
+
+2 papers in one day, considering today to be yet another great leap towards our goals!
+## Changelog
+
+- At first, we were thinking about going through fast.ai course 2. However, we quickly realized at our current level we're more than capable of diving into papers and larger (non-kaggle) projects. 
+
+## Short-term goals
+
+- Especially during spring break, we want to make a considerable amount of progress with log-sense!
